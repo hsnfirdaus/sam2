@@ -621,7 +621,7 @@ class SAM2VideoPredictor(SAM2Base):
                 for old_idx in old_frame_idxs:
                     obj_output_dict[storage_key].pop(old_idx)
                     for objid in inference_state[obj_key].keys():
-                        inference_state[obj_key][objid][storage_key].pop(old_idx)
+                        inference_state[obj_key][objid][storage_key].pop(old_idx, None)
 
                 inference_state["frames_tracked_per_obj"][obj_idx][frame_idx] = {
                     "reverse": reverse
